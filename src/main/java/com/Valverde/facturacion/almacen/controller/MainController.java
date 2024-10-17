@@ -13,5 +13,8 @@ public class MainController {
     public String categorias() {
         return "categorias";
     }
-
+    @GetMapping("/clientes")
+    public String clientes() {
+        return "clientes";
+    }
 }
