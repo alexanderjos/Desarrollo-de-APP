@@ -1,9 +1,10 @@
-package com.Valverde.facturacion.almacen;
+package com.valverde.facturacion.almacen;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Almacen1ApplicationTests {
+class SisalmacenApplicationTests {
 
 	@Test
 	void contextLoads() {

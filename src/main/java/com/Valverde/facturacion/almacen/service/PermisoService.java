@@ -1,13 +1,15 @@
-package com.Valverde.facturacion.almacen.service;
-import java.util.List;
+package com.valverde.facturacion.almacen.service;
 
 import org.springframework.data.domain.Pageable;
 
-import com.Valverde.facturacion.almacen.entity.Permiso;
+import com.valverde.facturacion.almacen.entity.Permiso;
+
+import java.util.List;
+
 public interface PermisoService {
     public List<Permiso> findAll(Pageable page);
-	public List<Permiso> finByNombre(String nombre,Pageable page);
-	public Permiso findById(int id);
-	public Permiso save(Permiso permiso);
-	public void delete(int id);
+    public List<Permiso> findByNombre(String nombre, Pageable page);
+    public Permiso findById(int id);
+    public Permiso save(Permiso permiso);
+    public void delete(int id);
 }

@@ -1,35 +1,31 @@
 package com.valverde.facturacion.almacen.entity;
 
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.util.Date;
-
 @Entity
-@Table(name = "articulos")
+@Table(name = "usuarios")
 @EntityListeners(AuditingEntityListener.class)
-public class Articulo {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(length = 100, nullable = false)
+    @Column(name = "nombre", length = 20, nullable = false)
     private String nombre;
 
-    @Column(length = 20)
-    private String codigo;
-
-    @Column(length = 20)
-    private String descripcion;
-
-    @Column(nullable = false)
-    private double precioVenta;
-
-    @ManyToOne
-    @JoinColumn(name = "categoria_id", nullable = false)
-    private Categoria categoriaId;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "usuario_rol",
+            joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "rol_id", referencedColumnName = "id"))
+    private Set<Rol> roles = new HashSet<>();
 
     @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)

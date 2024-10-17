@@ -1,10 +1,6 @@
-package com.Valverde.facturacion.almacen.dto;
+package com.valverde.facturacion.almacen.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Setter
 @Getter
@@ -12,6 +8,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 public class PermisoDto {
-	private int id;
-	private String nombre;
+    private int id;
+    private String nombre;
 }
