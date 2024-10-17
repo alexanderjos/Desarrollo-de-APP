@@ -98,4 +98,16 @@ public class CategoriaServiceImpl implements CategoriaService {
             throw new GeneralException("Error del servidor");
         }
     }
+
+    @Override
+    public List<Categoria> findAll() {
+        try {
+            List<Categoria> registros = repository.findAll();
+            return registros;
+        } catch (ValidateException | NoDataFoundException e) {
+            throw e;
+        } catch (GeneralException e) {
+            throw new GeneralException("Error del servidorr");
+        }
+    }
 }

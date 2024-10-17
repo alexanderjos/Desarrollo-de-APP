@@ -81,10 +81,10 @@ function getTabla() {
             if (data.ok) {
                 $.each(data.body, (index, registro) => {
                     const botonera = `
-                        <button type="button" class="btn btn-warning btn-sm editar">
+                        <button type="button" class="btn btn-warning btn-xs editar">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <button type="button" class="btn btn-danger btn-sm eliminar">
+                        <button type="button" class="btn btn-danger btn-xs eliminar">
                             <i class="fas fa-trash"></i>
                         </button>`;
                     t.row.add([botonera, registro.id, registro.nombre, registro.descripcion]);
@@ -146,10 +146,7 @@ $(document).ready(function () {
             },
         },
         columnDefs: [
-            { targets: 0, orderable: false, width: "10%" },
-            { targets: 1, width: "10%" },
-            { targets: 2, width: "30%" },
-            { targets: 3, width: "50%" }
+            { targets: 0, orderable: false }
         ],
     });
 
