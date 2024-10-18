@@ -14,10 +14,10 @@ function ajaxRequest(type, endpoint, data = null) {
 
 function save(bandera) {
     const id = $("#guardar").data("id");
-    const cliente = {
+    const registro = {
         id,
         nombre: $("#nombre").val(),
-        tipoDocumento: $("#tipoDocumento").val(),  // Añadido tipoDocumento
+        tipoDocumento: $("#tipoDocumento").val(),
         numeroDocumento: $("#numeroDocumento").val(),
         telefono: $("#telefono").val(),
         email: $("#email").val(),
@@ -26,7 +26,7 @@ function save(bandera) {
     const type = bandera === 1 ? "POST" : "PUT";
     const endpoint = bandera === 1 ? url : `${url}/${id}`;
 
-    ajaxRequest(type, endpoint, cliente)
+    ajaxRequest(type, endpoint, registro)
         .done((data) => {
             if (data.ok) {
                 $("#modal-update").modal("hide");
@@ -83,14 +83,33 @@ function getTabla() {
 
             if (data.ok) {
                 $.each(data.body, (index, cliente) => {
+                    let tipoDocumentoText;
+
+                    switch (cliente.tipoDocumento) {
+                        case '0':
+                            tipoDocumentoText = 'Documento tributario no domiciliario';
+                            break;
+                        case '1':
+                            tipoDocumentoText = 'DNI';
+                            break;
+                        case '4':
+                            tipoDocumentoText = 'Carnet de extranjería'; 
+                            break;
+                        case '6':
+                            tipoDocumentoText = 'RUC';
+                            break;
+                        case '7':
+                            tipoDocumentoText = 'Pasaporte';
+                            break;
+                    }
                     const botonera = `
-                        <button type="button" class="btn btn-warning btn-xs editar">
+                        <button type="button" class="btn btn-warning btn-sm editar">
                             <i class="fas fa-edit"></i>
                         </button>
-                        <button type="button" class="btn btn-danger btn-xs eliminar">
+                        <button type="button" class="btn btn-danger btn-sm eliminar">
                             <i class="fas fa-trash"></i>
                         </button>`;
-                    t.row.add([botonera, cliente.id, cliente.nombre, cliente.tipoDocumento, cliente.numeroDocumento, cliente.telefono, cliente.email]);
+                    t.row.add([botonera, cliente.id, cliente.nombre, tipoDocumentoText, cliente.numeroDocumento, cliente.telefono, cliente.email]);
                 });
                 t.draw(false);
             } else {
@@ -106,7 +125,7 @@ function getFila(id) {
             if (data.ok) {
                 $("#modal-title").text("Editar cliente");
                 $("#nombre").val(data.body.nombre);
-                $("#tipoDocumento").val(data.body.tipoDocumento);  // Tipo documento
+                $("#tipoDocumento").val(data.body.tipoDocumento);
                 $("#numeroDocumento").val(data.body.numeroDocumento);
                 $("#telefono").val(data.body.telefono);
                 $("#email").val(data.body.email);
@@ -122,7 +141,7 @@ function getFila(id) {
 function clear() {
     $("#modal-title").text("Nuevo cliente");
     $("#nombre").val("");
-    $("#tipoDocumento").val("");  // Limpiar tipoDocumento
+    $("#tipoDocumento").val("");
     $("#numeroDocumento").val("");
     $("#telefono").val("");
     $("#email").val("");
@@ -189,7 +208,7 @@ $(document).ready(function () {
 
     getTabla();
 	
-	$('#liClientes').addClass("menu-open");
+	$('#liAlmacen').addClass("menu-open");
 	$('#liCliente').addClass("active");
 
 });
