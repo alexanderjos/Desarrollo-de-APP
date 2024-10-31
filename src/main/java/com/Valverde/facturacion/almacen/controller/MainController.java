@@ -1,4 +1,4 @@
-package com.valverde.facturacion.almacen.controller;
+package com.Valverde.facturacion.almacen.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

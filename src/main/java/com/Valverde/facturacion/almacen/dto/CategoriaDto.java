@@ -1,4 +1,4 @@
-package com.valverde.facturacion.almacen.dto;
+package com.Valverde.facturacion.almacen.dto;
 
 import lombok.*;
 

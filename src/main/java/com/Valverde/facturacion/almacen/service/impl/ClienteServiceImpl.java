@@ -1,17 +1,17 @@
-package com.valverde.facturacion.almacen.service.impl;
+package com.Valverde.facturacion.almacen.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.valverde.facturacion.almacen.entity.Cliente;
-import com.valverde.facturacion.almacen.exception.GeneralException;
-import com.valverde.facturacion.almacen.exception.NoDataFoundException;
-import com.valverde.facturacion.almacen.exception.ValidateException;
-import com.valverde.facturacion.almacen.repository.ClienteRepository;
-import com.valverde.facturacion.almacen.service.ClienteService;
-import com.valverde.facturacion.almacen.validator.ClienteValidator;
+import com.Valverde.facturacion.almacen.entity.Cliente;
+import com.Valverde.facturacion.almacen.exception.GeneralException;
+import com.Valverde.facturacion.almacen.exception.NoDataFoundException;
+import com.Valverde.facturacion.almacen.exception.ValidateException;
+import com.Valverde.facturacion.almacen.repository.ClienteRepository;
+import com.Valverde.facturacion.almacen.service.ClienteService;
+import com.Valverde.facturacion.almacen.validator.ClienteValidator;
 
 import java.util.List;
 

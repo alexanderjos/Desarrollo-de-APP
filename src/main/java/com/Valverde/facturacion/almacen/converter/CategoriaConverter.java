@@ -1,9 +1,9 @@
-package com.valverde.facturacion.almacen.converter;
+package com.Valverde.facturacion.almacen.converter;
 
 import org.springframework.stereotype.Component;
 
-import com.valverde.facturacion.almacen.dto.CategoriaDto;
-import com.valverde.facturacion.almacen.entity.Categoria;
+import com.Valverde.facturacion.almacen.dto.CategoriaDto;
+import com.Valverde.facturacion.almacen.entity.Categoria;
 
 @Component
 public class CategoriaConverter extends AbstractConverter<Categoria, CategoriaDto> {

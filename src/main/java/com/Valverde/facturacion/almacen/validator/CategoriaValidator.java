@@ -1,7 +1,7 @@
-package com.valverde.facturacion.almacen.validator;
+package com.Valverde.facturacion.almacen.validator;
 
-import com.valverde.facturacion.almacen.entity.Categoria;
-import com.valverde.facturacion.almacen.exception.ValidateException;
+import com.Valverde.facturacion.almacen.entity.Categoria;
+import com.Valverde.facturacion.almacen.exception.ValidateException;
 
 public class CategoriaValidator {
     public static void save(Categoria registro) {

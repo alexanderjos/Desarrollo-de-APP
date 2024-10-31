@@ -1,4 +1,4 @@
-package com.valverde.facturacion.almacen.exception;
+package com.Valverde.facturacion.almacen.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

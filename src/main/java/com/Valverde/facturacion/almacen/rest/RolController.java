@@ -1,16 +1,20 @@
-package com.valverde.facturacion.almacen.rest;
+package com.Valverde.facturacion.almacen.rest;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.valverde.facturacion.almacen.entity.Categoria;
-import com.valverde.facturacion.almacen.entity.Rol;
-import com.valverde.facturacion.almacen.service.RolService;
-
-import java.util.List;
+import com.Valverde.facturacion.almacen.entity.Rol;
+import com.Valverde.facturacion.almacen.service.RolService;
 
 @RestController
 @RequestMapping("/v1/roles")

@@ -1,4 +1,4 @@
-package com.valverde.facturacion.almacen;
+package com.Valverde.facturacion.almacen;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

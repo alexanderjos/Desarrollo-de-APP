@@ -1,4 +1,4 @@
-package com.valverde.facturacion.almacen.rest;
+package com.Valverde.facturacion.almacen.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -7,11 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.valverde.facturacion.almacen.converter.ClienteConverter;
-import com.valverde.facturacion.almacen.dto.ClienteDto;
-import com.valverde.facturacion.almacen.entity.Cliente;
-import com.valverde.facturacion.almacen.service.ClienteService;
-import com.valverde.facturacion.almacen.util.WrapperResponse;
+import com.Valverde.facturacion.almacen.converter.ClienteConverter;
+import com.Valverde.facturacion.almacen.dto.ClienteDto;
+import com.Valverde.facturacion.almacen.entity.Cliente;
+import com.Valverde.facturacion.almacen.service.ClienteService;
+import com.Valverde.facturacion.almacen.util.WrapperResponse;
 
 import java.util.List;
 

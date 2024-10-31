@@ -1,4 +1,4 @@
-package com.valverde.facturacion.almacen.util;
+package com.Valverde.facturacion.almacen.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
